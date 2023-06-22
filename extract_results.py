@@ -10,7 +10,7 @@ argParser.add_argument("-d", "--dataset", default='compas', help="dataset")
 args = argParser.parse_args()
 
 
-path = f'datasets/{args.dataset}/raha-baran-results-compas/error-correction/correction.dataset'
+path = f'datasets/{args.dataset}/raha-baran-results-{args.dataset}/error-correction/correction.dataset'
 
 # retrieve raha data object
 objects = []
