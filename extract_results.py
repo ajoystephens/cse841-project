@@ -38,7 +38,7 @@ corrected_df = dirty_df.copy()
 for cell in correction_dict:
     val = correction_dict[cell]
     if val == '': val='nan'
-    dirty_df.iloc[cell] = float(val)
+    corrected_df.iloc[cell] = float(val)
 
 # save corrected dataset
 corrected_df.to_csv("datasets/compas/corrected.csv", sep=",", header=True, index=False)
