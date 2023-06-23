@@ -1,4 +1,4 @@
 Baran's performance on compas:
-Precision = 0.60
-Recall = 0.47
-F1 = 0.53
+Precision = 0.50
+Recall = 0.44
+F1 = 0.47
