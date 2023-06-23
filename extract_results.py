@@ -30,7 +30,7 @@ data.create_repaired_dataset(correction_dict)
 corrected_df = data.repaired_dataframe
 
 # save corrected dataset
-corrected_df.to_csv("datasets/compas/corrected.csv", index=False)
+np.savetxt("datasets/compas/corrected.csv", corrected_df.to_numpy(), delimiter=",")
 
 # save other info
 data_dict = {

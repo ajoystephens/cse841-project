@@ -17,7 +17,7 @@ from argparse import ArgumentParser
 # ==============================================================================
 argParser = ArgumentParser()
 argParser.add_argument("-d", "--dataset", default='compas', help="dataset")
-argParser.add_argument("-c", "--corrected", default=0, help="if to use the corrected dataset")
+argParser.add_argument("-sub", "--subset", default='clean', help="could be clean, dirty, or corrected")
 argParser.add_argument("-e", "--epochs", default=50, type=int, help="number of epochs")
 argParser.add_argument("-lr", "--learning_rate", default=0.05, help="learning_rate")
 argParser.add_argument("-hi", "--hidden", default=32, help="dimmensions of hidden layer")
@@ -128,8 +128,8 @@ def test(model, x, y, test_mask):
 # temp = f" GETTING DATA:"
 print(f'====={" GETTING DATA:" :=<85}')
 
-option = 'corrected' if args.corrected else 'clean'
-x_path = f'datasets/{args.dataset}/{option}.csv'
+# option = 'corrected' if args.corrected else 'clean'
+x_path = f'datasets/{args.dataset}/{args.subset}.csv'
 print(f'retrieving: {x_path}')
 x = np.loadtxt(x_path,delimiter=",", dtype=str)
 x = x.astype(float)
