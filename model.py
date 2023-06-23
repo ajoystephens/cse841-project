@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import pickle
 import torch 
 import torch.nn.functional as F
@@ -73,7 +74,11 @@ def train(model, x, y, train_mask, val_mask, epochs):
 
         out, out_softmax = model(x[train_mask])
         
+        print(train_mask.shape)
+        print(y.shape)
+        print(out.shape)
         loss = criterion(out, y[train_mask])
+        quit()
         out_softmax = out_softmax.clone().detach().cpu().numpy()
         pred = out_softmax.argmax(axis=1)
 
@@ -131,8 +136,9 @@ print(f'====={" GETTING DATA:" :=<85}')
 # option = 'corrected' if args.corrected else 'clean'
 x_path = f'datasets/{args.dataset}/{args.subset}.csv'
 print(f'retrieving: {x_path}')
-x = np.loadtxt(x_path,delimiter=",", dtype=str)
-x = x.astype(float)
+
+x = pd.read_csv(x_path, sep=",", header=0, dtype=float)
+x = x.to_numpy()
 x = np.nan_to_num(x)
 x = normalize(x,axis=0)
 x = torch.tensor(x,dtype=torch.float).to(DEVICE)

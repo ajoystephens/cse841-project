@@ -1,0 +1,23 @@
+===== SETUP ==============================================================================
+----- Initial Args -----------------------------------------------------------------------
+	dataset: compas
+	subset: corrected
+	epochs: 50
+	learning_rate: 0.05
+	hidden: 32
+	dropout: 0.2
+	p_test: 0.2
+	p_val: 0.2
+----- Other ------------------------------------------------------------------------------
+DEVICE: mps
+===== GETTING DATA:=======================================================================
+retrieving: datasets/compas/corrected.csv
+retrieving: datasets/compas/data.p
+X shape: torch.Size([11756, 90])
+Y shape: torch.Size([11757, 2])
+P shape: torch.Size([11757])
+===== BEGIN SEED: 1 ======================================================================
+Train Cnt: 7054
+Val Cnt: 2351
+Test Cnt: 2351
+----- Training Model ---------------------------------------------------------------------

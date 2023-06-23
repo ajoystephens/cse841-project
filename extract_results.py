@@ -31,7 +31,8 @@ data.create_repaired_dataset(correction_dict)
 corrected_df = data.repaired_dataframe.astype(float)
 
 # save corrected dataset
-np.savetxt("datasets/compas/corrected.csv", corrected_df.to_numpy(), delimiter=",")
+corrected_df.to_csv("datasets/compas/corrected.csv", sep=",", header=True, index=False)
+# np.savetxt("datasets/compas/corrected.csv", corrected_df.to_numpy(), delimiter=",")
 
 # save other info
 data_dict = {
