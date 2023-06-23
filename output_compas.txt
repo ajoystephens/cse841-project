@@ -1,4 +1,4 @@
-Traceback (most recent call last):
-  File "/home/steph496/source/cse841-project/raha/correction.py", line 25, in <module>
-    import bs4
-ModuleNotFoundError: No module named 'bs4'
+Baran's performance on compas:
+Precision = 0.60
+Recall = 0.47
+F1 = 0.53
