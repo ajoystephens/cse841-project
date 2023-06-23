@@ -11,6 +11,7 @@ args = argParser.parse_args()
 
 
 path = f'datasets/{args.dataset}/raha-baran-results-{args.dataset}/error-correction/correction.dataset'
+path = f'datasets/compas/raha-baran-results-compas/error-correction/correction.dataset'
 
 # retrieve raha data object
 objects = []
@@ -27,7 +28,7 @@ actual_dict = data.get_actual_errors_dictionary()
 correction_dict = data.corrected_cells
 
 data.create_repaired_dataset(correction_dict)
-corrected_df = data.repaired_dataframe
+corrected_df = data.repaired_dataframe.astype(float)
 
 # save corrected dataset
 np.savetxt("datasets/compas/corrected.csv", corrected_df.to_numpy(), delimiter=",")
