@@ -11,7 +11,7 @@ args = argParser.parse_args()
 
 
 path = f'datasets/{args.dataset}/raha-baran-results-{args.dataset}/error-correction/correction.dataset'
-path = f'datasets/compas/raha-baran-results-compas/error-correction/correction.dataset'
+# path = f'datasets/compas/raha-baran-results-compas/error-correction/correction.dataset'
 
 # retrieve raha data object
 objects = []
@@ -27,8 +27,18 @@ data = objects[0]
 actual_dict = data.get_actual_errors_dictionary()
 correction_dict = data.corrected_cells
 
-data.create_repaired_dataset(correction_dict)
-corrected_df = data.repaired_dataframe.astype(float)
+# data.create_repaired_dataset(correction_dict)
+# corrected_df = data.repaired_dataframe.astype(float)
+
+path = f'datasets/{args.dataset}/dirty.csv'
+# path = f'datasets/compas/dirty.csv'
+dirty_df = pd.read_csv(path, sep=",", header=0, dtype=float)
+
+corrected_df = dirty_df.copy()
+for cell in correction_dict:
+    val = correction_dict[cell]
+    if val == '': val='nan'
+    dirty_df.iloc[cell] = float(val)
 
 # save corrected dataset
 corrected_df.to_csv("datasets/compas/corrected.csv", sep=",", header=True, index=False)
