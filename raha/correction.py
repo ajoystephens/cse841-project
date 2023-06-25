@@ -737,13 +737,6 @@ if __name__ == "__main__":
     p, r, f = data.get_data_cleaning_evaluation(correction_dictionary)[-3:]
     print("Baran's performance on {}:\nPrecision = {:.2f}\nRecall = {:.2f}\nF1 = {:.2f}".format(data.name, p, r, f))
     
-    # save other info
-    data_dict = {
-        'detected_errors':dataset_dictionary
-    }
-    file = open(f'datasets/{dataset_name}/errors.p', 'wb')
-    pickle.dump(data_dict,file)
-    file.close()
 
     # save other info
     data_dict = {
@@ -751,7 +744,7 @@ if __name__ == "__main__":
         'corrected_errors':data.corrected_cells,
         'detected_errors':detected_dict
     }
-    file = open('datasets/compas/errors.p', 'wb')
+    file = open(f'datasets/{dataset_name}/all_errors.p', 'wb')
     pickle.dump(data_dict,file)
     file.close()
     
