@@ -32,6 +32,8 @@ import sklearn.ensemble
 import sklearn.naive_bayes
 import sklearn.linear_model
 
+from argparse import ArgumentParser
+
 import raha
 ########################################
 
@@ -701,6 +703,9 @@ class Correction:
         return d.corrected_cells
 ########################################
 
+argParser = ArgumentParser()
+argParser.add_argument("-d", "--dataset", default='compas', help="dataset")
+args = argParser.parse_args()
 
 ########################################
 if __name__ == "__main__":
@@ -710,7 +715,7 @@ if __name__ == "__main__":
     #     "path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "dirty.csv")),
     #     "clean_path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "clean.csv"))
     # }
-    dataset_name = "compas"
+    dataset_name = args.dataset
     dataset_dictionary = {
         "name": dataset_name,
         "path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "dirty.csv")),
