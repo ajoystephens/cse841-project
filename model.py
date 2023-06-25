@@ -20,7 +20,7 @@ argParser = ArgumentParser()
 argParser.add_argument("-d", "--dataset", default='compas', help="dataset")
 argParser.add_argument("-sub", "--subset", default='clean', help="could be clean, dirty, or corrected")
 argParser.add_argument("-e", "--epochs", default=50, type=int, help="number of epochs")
-argParser.add_argument("-lr", "--learning_rate", default=0.05, help="learning_rate")
+argParser.add_argument("-lr", "--learning_rate", default=0.05, type=float, help="learning_rate")
 argParser.add_argument("-hi", "--hidden", default=32, help="dimmensions of hidden layer")
 argParser.add_argument("-dr", "--dropout", default=0.2, help="dropout")
 argParser.add_argument("-pt", "--p_test", default=0.2, help="percent of dataset to set aside for testing")
@@ -56,7 +56,6 @@ class Simple(torch.nn.Module):
         h = torch.relu(h)
         h = F.dropout(h, p=self.dropout, training=self.training)
         h = self.l2(h)
-        h = torch.relu(h)
         return h, F.softmax(h,dim=1)
 
 def train(model, x, y, train_mask, val_mask, epochs):
@@ -74,11 +73,7 @@ def train(model, x, y, train_mask, val_mask, epochs):
 
         out, out_softmax = model(x[train_mask])
         
-        print(train_mask.shape)
-        print(y.shape)
-        print(out.shape)
         loss = criterion(out, y[train_mask])
-        quit()
         out_softmax = out_softmax.clone().detach().cpu().numpy()
         pred = out_softmax.argmax(axis=1)
 
@@ -103,8 +98,8 @@ def train(model, x, y, train_mask, val_mask, epochs):
         # Print metrics every 10 epochs
         if(epoch % 10 == 0):
             print(f'Epoch {epoch:>3} | Train Loss: {loss:.3f} | Val Loss: {val_loss:.3f} | ')
-            print(f'val confusion matrix:\n{val_cm}')
-            print(val_softmax[1,:])
+            # print(f'val confusion matrix:\n{val_cm}')
+            # print(val_softmax[1,:])
             
 
     return model
@@ -213,9 +208,9 @@ for seed in SEEDS:
 
     acc = accuracy_score(label,pred)
     sp = statistical_parity_difference(label,pred,prot_attr=prot,pos_label=0)
-    eo = average_odds_difference(label,pred,prot_attr=prot,priv_group=priv_group,pos_label=pos_label)
+    eo = abs(average_odds_difference(label,pred,prot_attr=prot,priv_group=priv_group,pos_label=pos_label))
     cm = confusion_matrix(label,pred)
-    print(f'test confusion matrix:\n{cm}')
+    # print(f'test confusion matrix:\n{cm}')
     print(f'accuracy: {acc}')
     print(f'stat parity: {sp}')
     print(f'equal odds: {eo}')
