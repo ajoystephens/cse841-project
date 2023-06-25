@@ -1,0 +1,4 @@
+Baran's performance on german:
+Precision = 0.19
+Recall = 0.08
+F1 = 0.11

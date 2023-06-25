@@ -1,0 +1,4 @@
+Raha's performance on german:
+Precision = 0.23
+Recall = 0.11
+F1 = 0.15

@@ -1,0 +1,5 @@
+I just load strategies' results as they have already been run on the dataset!
+Raha's performance on compas:
+Precision = 0.16
+Recall = 0.30
+F1 = 0.20
