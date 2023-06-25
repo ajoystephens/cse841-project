@@ -458,7 +458,7 @@ if __name__ == "__main__":
     
     # save other info
     data_dict = {
-        'detected_errors':dataset_dictionary
+        'detected_errors':detection_dictionary
     }
     file = open(f'datasets/{dataset_name}/errors.p', 'wb')
     pickle.dump(data_dict,file)
