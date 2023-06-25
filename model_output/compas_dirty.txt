@@ -1,7 +1,7 @@
 ===== SETUP ==============================================================================
 ----- Initial Args -----------------------------------------------------------------------
 	dataset: compas
-	subset: corrected
+	subset: dirty
 	epochs: 50
 	learning_rate: 0.05
 	hidden: 32
@@ -11,7 +11,7 @@
 ----- Other ------------------------------------------------------------------------------
 DEVICE: mps
 ===== GETTING DATA:=======================================================================
-retrieving: datasets/compas/corrected.csv
+retrieving: datasets/compas/dirty.csv
 retrieving: datasets/compas/data.p
 X shape: torch.Size([11757, 88])
 Y shape: torch.Size([11757, 2])
@@ -21,16 +21,16 @@ Train Cnt: 7055
 Val Cnt: 2351
 Test Cnt: 2351
 ----- Training Model ---------------------------------------------------------------------
-Epoch   0 | Train Loss: 0.720 | Val Loss: 0.688 | 
-Epoch  10 | Train Loss: 0.560 | Val Loss: 0.526 | 
-Epoch  20 | Train Loss: 0.371 | Val Loss: 0.348 | 
-Epoch  30 | Train Loss: 0.260 | Val Loss: 0.246 | 
-Epoch  40 | Train Loss: 0.208 | Val Loss: 0.206 | 
-Epoch  50 | Train Loss: 0.178 | Val Loss: 0.185 | 
+Epoch   0 | Train Loss: 0.720 | Val Loss: 0.689 | 
+Epoch  10 | Train Loss: 0.613 | Val Loss: 0.590 | 
+Epoch  20 | Train Loss: 0.452 | Val Loss: 0.436 | 
+Epoch  30 | Train Loss: 0.366 | Val Loss: 0.364 | 
+Epoch  40 | Train Loss: 0.326 | Val Loss: 0.338 | 
+Epoch  50 | Train Loss: 0.303 | Val Loss: 0.313 | 
 ----- Testing Model ----------------------------------------------------------------------
-accuracy: 0.9374734155678435
-stat parity: 0.08690823436531858
-equal odds: 0.0053885075749455225
+accuracy: 0.9196086771586559
+stat parity: 0.08403828327096763
+equal odds: 0.018603365988436815
 ------************************************************************************************
 ===== BEGIN SEED: 5 ======================================================================
 Train Cnt: 7055
@@ -38,31 +38,31 @@ Val Cnt: 2351
 Test Cnt: 2351
 ----- Training Model ---------------------------------------------------------------------
 Epoch   0 | Train Loss: 0.752 | Val Loss: 0.713 | 
-Epoch  10 | Train Loss: 0.635 | Val Loss: 0.621 | 
-Epoch  20 | Train Loss: 0.471 | Val Loss: 0.449 | 
-Epoch  30 | Train Loss: 0.322 | Val Loss: 0.317 | 
-Epoch  40 | Train Loss: 0.243 | Val Loss: 0.241 | 
-Epoch  50 | Train Loss: 0.200 | Val Loss: 0.205 | 
+Epoch  10 | Train Loss: 0.649 | Val Loss: 0.637 | 
+Epoch  20 | Train Loss: 0.521 | Val Loss: 0.498 | 
+Epoch  30 | Train Loss: 0.399 | Val Loss: 0.387 | 
+Epoch  40 | Train Loss: 0.341 | Val Loss: 0.333 | 
+Epoch  50 | Train Loss: 0.309 | Val Loss: 0.311 | 
 ----- Testing Model ----------------------------------------------------------------------
-accuracy: 0.9374734155678435
+accuracy: 0.8983411314334325
 stat parity: 0.07861581356399938
-equal odds: 0.031809107717748974
+equal odds: 0.02746459274937102
 ------************************************************************************************
 ===== BEGIN SEED: 10 =====================================================================
 Train Cnt: 7055
 Val Cnt: 2351
 Test Cnt: 2351
 ----- Training Model ---------------------------------------------------------------------
-Epoch   0 | Train Loss: 0.748 | Val Loss: 0.716 | 
-Epoch  10 | Train Loss: 0.650 | Val Loss: 0.651 | 
-Epoch  20 | Train Loss: 0.554 | Val Loss: 0.552 | 
-Epoch  30 | Train Loss: 0.433 | Val Loss: 0.434 | 
-Epoch  40 | Train Loss: 0.328 | Val Loss: 0.331 | 
-Epoch  50 | Train Loss: 0.260 | Val Loss: 0.270 | 
+Epoch   0 | Train Loss: 0.748 | Val Loss: 0.717 | 
+Epoch  10 | Train Loss: 0.661 | Val Loss: 0.664 | 
+Epoch  20 | Train Loss: 0.584 | Val Loss: 0.584 | 
+Epoch  30 | Train Loss: 0.485 | Val Loss: 0.486 | 
+Epoch  40 | Train Loss: 0.401 | Val Loss: 0.408 | 
+Epoch  50 | Train Loss: 0.347 | Val Loss: 0.361 | 
 ----- Testing Model ----------------------------------------------------------------------
-accuracy: 0.9081242024670353
-stat parity: 0.08287181097566776
-equal odds: 0.042626960560377625
+accuracy: 0.8885580603998299
+stat parity: 0.10101154281690405
+equal odds: 0.055067817442189304
 ------************************************************************************************
 ===== BEGIN SEED: 15 =====================================================================
 Train Cnt: 7055
@@ -70,15 +70,15 @@ Val Cnt: 2351
 Test Cnt: 2351
 ----- Training Model ---------------------------------------------------------------------
 Epoch   0 | Train Loss: 0.721 | Val Loss: 0.694 | 
-Epoch  10 | Train Loss: 0.607 | Val Loss: 0.582 | 
-Epoch  20 | Train Loss: 0.424 | Val Loss: 0.414 | 
-Epoch  30 | Train Loss: 0.299 | Val Loss: 0.296 | 
-Epoch  40 | Train Loss: 0.232 | Val Loss: 0.236 | 
-Epoch  50 | Train Loss: 0.196 | Val Loss: 0.202 | 
+Epoch  10 | Train Loss: 0.626 | Val Loss: 0.605 | 
+Epoch  20 | Train Loss: 0.472 | Val Loss: 0.459 | 
+Epoch  30 | Train Loss: 0.380 | Val Loss: 0.378 | 
+Epoch  40 | Train Loss: 0.333 | Val Loss: 0.343 | 
+Epoch  50 | Train Loss: 0.306 | Val Loss: 0.319 | 
 ----- Testing Model ----------------------------------------------------------------------
-accuracy: 0.9400255210548703
-stat parity: 0.06866744886880904
-equal odds: 0.0025821330700350753
+accuracy: 0.8974904296044236
+stat parity: 0.06934660155888672
+equal odds: 0.013803477849122114
 ------************************************************************************************
 ===== BEGIN SEED: 20 =====================================================================
 Train Cnt: 7055
@@ -86,15 +86,15 @@ Val Cnt: 2351
 Test Cnt: 2351
 ----- Training Model ---------------------------------------------------------------------
 Epoch   0 | Train Loss: 0.707 | Val Loss: 0.693 | 
-Epoch  10 | Train Loss: 0.572 | Val Loss: 0.560 | 
-Epoch  20 | Train Loss: 0.399 | Val Loss: 0.401 | 
-Epoch  30 | Train Loss: 0.284 | Val Loss: 0.294 | 
-Epoch  40 | Train Loss: 0.226 | Val Loss: 0.237 | 
-Epoch  50 | Train Loss: 0.194 | Val Loss: 0.205 | 
+Epoch  10 | Train Loss: 0.623 | Val Loss: 0.619 | 
+Epoch  20 | Train Loss: 0.488 | Val Loss: 0.480 | 
+Epoch  30 | Train Loss: 0.398 | Val Loss: 0.393 | 
+Epoch  40 | Train Loss: 0.347 | Val Loss: 0.349 | 
+Epoch  50 | Train Loss: 0.318 | Val Loss: 0.322 | 
 ----- Testing Model ----------------------------------------------------------------------
-accuracy: 0.9387494683113569
-stat parity: 0.0845652049516471
-equal odds: 0.030218808118871843
+accuracy: 0.8962143768609102
+stat parity: 0.08283422663894557
+equal odds: 0.04186328743032147
 ------************************************************************************************
 ===== BEGIN SEED: 25 =====================================================================
 Train Cnt: 7055
@@ -102,31 +102,31 @@ Val Cnt: 2351
 Test Cnt: 2351
 ----- Training Model ---------------------------------------------------------------------
 Epoch   0 | Train Loss: 0.731 | Val Loss: 0.697 | 
-Epoch  10 | Train Loss: 0.641 | Val Loss: 0.625 | 
-Epoch  20 | Train Loss: 0.493 | Val Loss: 0.476 | 
-Epoch  30 | Train Loss: 0.361 | Val Loss: 0.351 | 
-Epoch  40 | Train Loss: 0.275 | Val Loss: 0.275 | 
-Epoch  50 | Train Loss: 0.229 | Val Loss: 0.233 | 
+Epoch  10 | Train Loss: 0.656 | Val Loss: 0.641 | 
+Epoch  20 | Train Loss: 0.536 | Val Loss: 0.514 | 
+Epoch  30 | Train Loss: 0.424 | Val Loss: 0.403 | 
+Epoch  40 | Train Loss: 0.364 | Val Loss: 0.344 | 
+Epoch  50 | Train Loss: 0.329 | Val Loss: 0.317 | 
 ----- Testing Model ----------------------------------------------------------------------
-accuracy: 0.9217354317311782
-stat parity: 0.06576926507675218
-equal odds: 0.024532717280784933
+accuracy: 0.8949383241173968
+stat parity: 0.07925299426690124
+equal odds: 0.04180832483203406
 ------************************************************************************************
 ===== BEGIN SEED: 30 =====================================================================
 Train Cnt: 7055
 Val Cnt: 2351
 Test Cnt: 2351
 ----- Training Model ---------------------------------------------------------------------
-Epoch   0 | Train Loss: 0.714 | Val Loss: 0.693 | 
-Epoch  10 | Train Loss: 0.593 | Val Loss: 0.585 | 
-Epoch  20 | Train Loss: 0.411 | Val Loss: 0.404 | 
-Epoch  30 | Train Loss: 0.288 | Val Loss: 0.284 | 
-Epoch  40 | Train Loss: 0.227 | Val Loss: 0.231 | 
-Epoch  50 | Train Loss: 0.193 | Val Loss: 0.203 | 
+Epoch   0 | Train Loss: 0.714 | Val Loss: 0.694 | 
+Epoch  10 | Train Loss: 0.615 | Val Loss: 0.612 | 
+Epoch  20 | Train Loss: 0.459 | Val Loss: 0.466 | 
+Epoch  30 | Train Loss: 0.367 | Val Loss: 0.380 | 
+Epoch  40 | Train Loss: 0.324 | Val Loss: 0.340 | 
+Epoch  50 | Train Loss: 0.301 | Val Loss: 0.318 | 
 ----- Testing Model ----------------------------------------------------------------------
-accuracy: 0.9413015737983836
-stat parity: 0.04413841752557124
-equal odds: 0.002575837175476936
+accuracy: 0.9021692896639728
+stat parity: 0.04833405180859818
+equal odds: 0.005970759871985365
 ------************************************************************************************
 ===== BEGIN SEED: 35 =====================================================================
 Train Cnt: 7055
@@ -134,49 +134,49 @@ Val Cnt: 2351
 Test Cnt: 2351
 ----- Training Model ---------------------------------------------------------------------
 Epoch   0 | Train Loss: 0.760 | Val Loss: 0.720 | 
-Epoch  10 | Train Loss: 0.652 | Val Loss: 0.641 | 
-Epoch  20 | Train Loss: 0.557 | Val Loss: 0.541 | 
-Epoch  30 | Train Loss: 0.435 | Val Loss: 0.423 | 
-Epoch  40 | Train Loss: 0.329 | Val Loss: 0.325 | 
-Epoch  50 | Train Loss: 0.262 | Val Loss: 0.262 | 
+Epoch  10 | Train Loss: 0.662 | Val Loss: 0.653 | 
+Epoch  20 | Train Loss: 0.588 | Val Loss: 0.574 | 
+Epoch  30 | Train Loss: 0.486 | Val Loss: 0.476 | 
+Epoch  40 | Train Loss: 0.401 | Val Loss: 0.398 | 
+Epoch  50 | Train Loss: 0.347 | Val Loss: 0.347 | 
 ----- Testing Model ----------------------------------------------------------------------
-accuracy: 0.9128030625265844
-stat parity: 0.0771409107831722
-equal odds: 0.018925843123135222
+accuracy: 0.8787749893662271
+stat parity: 0.07746805763487885
+equal odds: 0.021869757994548822
 ------************************************************************************************
 ===== BEGIN SEED: 40 =====================================================================
 Train Cnt: 7055
 Val Cnt: 2351
 Test Cnt: 2351
 ----- Training Model ---------------------------------------------------------------------
-Epoch   0 | Train Loss: 0.725 | Val Loss: 0.698 | 
-Epoch  10 | Train Loss: 0.633 | Val Loss: 0.611 | 
-Epoch  20 | Train Loss: 0.468 | Val Loss: 0.441 | 
-Epoch  30 | Train Loss: 0.343 | Val Loss: 0.323 | 
-Epoch  40 | Train Loss: 0.267 | Val Loss: 0.254 | 
-Epoch  50 | Train Loss: 0.226 | Val Loss: 0.212 | 
+Epoch   0 | Train Loss: 0.725 | Val Loss: 0.697 | 
+Epoch  10 | Train Loss: 0.660 | Val Loss: 0.646 | 
+Epoch  20 | Train Loss: 0.534 | Val Loss: 0.508 | 
+Epoch  30 | Train Loss: 0.426 | Val Loss: 0.400 | 
+Epoch  40 | Train Loss: 0.364 | Val Loss: 0.341 | 
+Epoch  50 | Train Loss: 0.332 | Val Loss: 0.307 | 
 ----- Testing Model ----------------------------------------------------------------------
-accuracy: 0.9162058698426202
-stat parity: 0.042811381646216784
-equal odds: 0.014364860355465248
+accuracy: 0.8838792003402808
+stat parity: 0.08267590107361966
+equal odds: 0.03756823279944982
 ------************************************************************************************
 ===== BEGIN SEED: 45 =====================================================================
 Train Cnt: 7055
 Val Cnt: 2351
 Test Cnt: 2351
 ----- Training Model ---------------------------------------------------------------------
-Epoch   0 | Train Loss: 0.716 | Val Loss: 0.683 | 
-Epoch  10 | Train Loss: 0.602 | Val Loss: 0.577 | 
-Epoch  20 | Train Loss: 0.413 | Val Loss: 0.411 | 
-Epoch  30 | Train Loss: 0.292 | Val Loss: 0.298 | 
-Epoch  40 | Train Loss: 0.231 | Val Loss: 0.237 | 
-Epoch  50 | Train Loss: 0.197 | Val Loss: 0.206 | 
+Epoch   0 | Train Loss: 0.716 | Val Loss: 0.684 | 
+Epoch  10 | Train Loss: 0.631 | Val Loss: 0.610 | 
+Epoch  20 | Train Loss: 0.481 | Val Loss: 0.470 | 
+Epoch  30 | Train Loss: 0.377 | Val Loss: 0.378 | 
+Epoch  40 | Train Loss: 0.331 | Val Loss: 0.331 | 
+Epoch  50 | Train Loss: 0.306 | Val Loss: 0.306 | 
 ----- Testing Model ----------------------------------------------------------------------
-accuracy: 0.9447043811144193
-stat parity: 0.09102692460383366
-equal odds: 0.037040529251055554
+accuracy: 0.9085495533815398
+stat parity: 0.05675471769735563
+equal odds: 0.005573378829957787
 ------************************************************************************************
 ===== CHECK ALL RESULTS:==================================================================
-acc: 0.92986 +/- 0.01290
-sp: 0.07225 +/- 0.01615
-eo: 0.02101 +/- 0.01382
+acc: 0.89685 +/- 0.01120
+sp: 0.07603 +/- 0.01408
+eo: 0.02696 +/- 0.01585
