@@ -211,7 +211,7 @@ class Detection:
                 strategy_name = json.loads(strategy_profile["name"])[0]
                 if strategy_name in self.ERROR_DETECTION_ALGORITHMS:
                     for cell in strategy_profile["output"]:
-                        if cell[1] == j:
+                        if cell[1] == j and cell[0] < d.dataframe.shape[0]:
                             feature_vectors[cell[0], strategy_index] = 1.0
             if "TFIDF" in self.ERROR_DETECTION_ALGORITHMS:
                 vectorizer = sklearn.feature_extraction.text.TfidfVectorizer(min_df=1, stop_words="english")
