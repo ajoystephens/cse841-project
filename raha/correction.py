@@ -61,7 +61,7 @@ class Correction:
         self.VALUE_ENCODINGS = ["identity", "unicode"]
         self.CLASSIFICATION_MODEL = "ABC"   # ["ABC", "DTC", "GBC", "GNB", "KNC" ,"SGDC", "SVC"]
         self.IGNORE_SIGN = "<<<IGNORE_THIS_VALUE>>>"
-        self.VERBOSE = False
+        self.VERBOSE = True
         self.SAVE_RESULTS = True
         self.ONLINE_PHASE = False
         self.LABELING_BUDGET = 20
@@ -716,17 +716,45 @@ if __name__ == "__main__":
     #     "clean_path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "clean.csv"))
     # }
     dataset_name = args.dataset
+
+    path = f'datasets/{args.dataset}/errors.p'
+    objects = []
+    with open(path, 'rb') as handle:
+        error_dict = pickle.load(handle)
+    # print(error_dict.keys())
+    detected_dict = error_dict['detected_errors']
+
     dataset_dictionary = {
         "name": dataset_name,
         "path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "dirty.csv")),
         "clean_path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "clean.csv"))
     }
     data = raha.dataset.Dataset(dataset_dictionary)
-    data.detected_cells = dict(data.get_actual_errors_dictionary())
+    # data.detected_cells = dict(data.get_actual_errors_dictionary())
+    data.detected_cells = dict(detected_dict)
     app = Correction()
     correction_dictionary = app.run(data)
     p, r, f = data.get_data_cleaning_evaluation(correction_dictionary)[-3:]
     print("Baran's performance on {}:\nPrecision = {:.2f}\nRecall = {:.2f}\nF1 = {:.2f}".format(data.name, p, r, f))
+    
+    # save other info
+    data_dict = {
+        'detected_errors':dataset_dictionary
+    }
+    file = open(f'datasets/{dataset_name}/errors.p', 'wb')
+    pickle.dump(data_dict,file)
+    file.close()
+
+    # save other info
+    data_dict = {
+        'actual_errors':data.get_actual_errors_dictionary(),
+        'corrected_errors':data.corrected_cells,
+        'detected_errors':detected_dict
+    }
+    file = open('datasets/compas/errors.p', 'wb')
+    pickle.dump(data_dict,file)
+    file.close()
+    
     # --------------------
     # app.extract_revisions(wikipedia_dumps_folder="../wikipedia-data")
     # app.pretrain_value_based_models(revision_data_folder="../wikipedia-data/revision-data")

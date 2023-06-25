@@ -56,7 +56,7 @@ class Detection:
         """
         self.LABELING_BUDGET = 20
         self.USER_LABELING_ACCURACY = 1.0
-        self.VERBOSE = False
+        self.VERBOSE = True
         self.SAVE_RESULTS = True
         self.CLUSTERING_BASED_SAMPLING = True
         self.STRATEGY_FILTERING = False
@@ -455,6 +455,15 @@ if __name__ == "__main__":
     data = raha.dataset.Dataset(dataset_dictionary)
     p, r, f = data.get_data_cleaning_evaluation(detection_dictionary)[:3]
     print("Raha's performance on {}:\nPrecision = {:.2f}\nRecall = {:.2f}\nF1 = {:.2f}".format(data.name, p, r, f))
+    
+    # save other info
+    data_dict = {
+        'detected_errors':dataset_dictionary
+    }
+    file = open(f'datasets/{dataset_name}/errors.p', 'wb')
+    pickle.dump(data_dict,file)
+    file.close()
+    
     # --------------------
     # app.STRATEGY_FILTERING = True
     # app.HISTORICAL_DATASETS = [
