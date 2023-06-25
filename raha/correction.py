@@ -744,7 +744,7 @@ if __name__ == "__main__":
         'corrected_errors':data.corrected_cells,
         'detected_errors':detected_dict
     }
-    file = open(f'datasets/{dataset_name}/all_errors.p', 'wb')
+    file = open(f'datasets/{dataset_name}/errors.p', 'wb')
     pickle.dump(data_dict,file)
     file.close()
     
