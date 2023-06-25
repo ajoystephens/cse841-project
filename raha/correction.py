@@ -61,7 +61,7 @@ class Correction:
         self.VALUE_ENCODINGS = ["identity", "unicode"]
         self.CLASSIFICATION_MODEL = "ABC"   # ["ABC", "DTC", "GBC", "GNB", "KNC" ,"SGDC", "SVC"]
         self.IGNORE_SIGN = "<<<IGNORE_THIS_VALUE>>>"
-        self.VERBOSE = True
+        self.VERBOSE = False
         self.SAVE_RESULTS = True
         self.ONLINE_PHASE = False
         self.LABELING_BUDGET = 20
