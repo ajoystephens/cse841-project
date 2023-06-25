@@ -38,6 +38,8 @@ import sklearn.kernel_ridge
 import sklearn.neural_network
 import sklearn.feature_extraction
 
+from argparse import ArgumentParser
+
 import raha
 ########################################
 
@@ -436,9 +438,13 @@ class Detection:
 ########################################
 
 
+argParser = ArgumentParser()
+argParser.add_argument("-d", "--dataset", default='compas', help="dataset")
+args = argParser.parse_args()
+
 ########################################
 if __name__ == "__main__":
-    dataset_name = "flights"
+    dataset_name = args.dataset
     dataset_dictionary = {
         "name": dataset_name,
         "path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "dirty.csv")),
