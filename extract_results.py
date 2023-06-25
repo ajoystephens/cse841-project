@@ -41,7 +41,7 @@ for cell in correction_dict:
     corrected_df.iloc[cell] = float(val)
 
 # save corrected dataset
-corrected_df.to_csv("datasets/compas/corrected.csv", sep=",", header=True, index=False)
+corrected_df.to_csv(f"datasets/{args.dataset}/corrected.csv", sep=",", header=True, index=False)
 # np.savetxt("datasets/compas/corrected.csv", corrected_df.to_numpy(), delimiter=",")
 
 # # save other info
