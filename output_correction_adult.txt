@@ -1,0 +1,4 @@
+Baran's performance on adult:
+Precision = 0.05
+Recall = 0.02
+F1 = 0.03
